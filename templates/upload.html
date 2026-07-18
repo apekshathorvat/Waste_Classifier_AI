@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Waste AI Prediction</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<h2>♻ Waste AI</h2>
+
+<div>
+
+<a href="/">Home</a>
+<a href="/about">About</a>
+<a href="/upload">Predict</a>
+<a href="/camera">Camera</a>
+
+</div>
+
+</nav>
+
+
+
+<section class="predict-section">
+
+
+<div class="predict-card">
+
+
+<h1>
+🤖 AI Waste Detection
+</h1>
+
+
+<p>
+Upload a waste image and let CNN identify the category.
+</p>
+
+
+
+<form action="/predict" method="POST" enctype="multipart/form-data">
+
+
+<label class="upload-box">
+
+
+📷
+
+<br>
+
+Choose Waste Image
+
+<input type="file" name="image" accept="image/*" required>
+
+
+</label>
+
+
+
+<button class="predict-btn">
+
+🚀 Predict Waste
+
+</button>
+
+
+
+</form>
+
+
+
+{% if prediction %}
+
+
+<div class="result-card">
+
+
+<h2>
+♻ Result
+</h2>
+
+
+<h1>
+{{prediction}}
+</h1>
+
+
+<p>
+AI Confidence: {{confidence}}%
+</p>
+
+
+</div>
+
+
+{% endif %}
+
+
+
+</div>
+
+
+</section>
+
+
+
+</body>
+
+</html>

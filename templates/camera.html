@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Waste AI Camera</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<h2>♻ Waste AI</h2>
+
+<div>
+
+<a href="/">Home</a>
+<a href="/about">About</a>
+<a href="/upload">Predict</a>
+<a href="/camera">Camera</a>
+
+</div>
+
+</nav>
+
+
+
+
+<section class="camera-section">
+
+
+<div class="camera-card">
+
+
+<h1>
+📷 AI Waste Scanner
+</h1>
+
+
+<p>
+Real-time waste detection using computer vision
+</p>
+
+
+
+<div class="camera-frame">
+
+
+<video id="camera" autoplay></video>
+
+
+<div class="scanner"></div>
+
+
+</div>
+
+
+
+<button class="camera-btn" onclick="startScanning()">
+🔍 Start Scanning
+</button>
+
+<h2 id="scan-result"></h2>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+<<script>
+
+navigator.mediaDevices.getUserMedia({
+    video:true
+})
+
+.then(stream=>{
+
+    document.getElementById("camera").srcObject = stream;
+
+})
+
+.catch(error=>{
+
+    console.log(error);
+
+});
+
+
+
+function startScanning(){
+
+    let result = document.getElementById("scan-result");
+
+    result.innerHTML = "🤖 AI is scanning waste...";
+
+
+    setTimeout(()=>{
+
+        result.innerHTML = "♻ Waste detected! Processing CNN prediction...";
+
+    },3000);
+
+
+}
+
+</script>
+
+
+</body>
+
+</html>

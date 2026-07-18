@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>About Waste AI</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+
+<body>
+
+
+<nav>
+
+<h2>♻ Waste AI</h2>
+
+<div>
+
+<a href="/">Home</a>
+<a href="/about">About</a>
+<a href="/upload">Predict</a>
+<a href="/camera">Camera</a>
+
+</div>
+
+</nav>
+
+
+
+<section class="about-hero">
+
+
+<h1>
+♻ About Waste Classifier AI
+</h1>
+
+
+<p>
+An intelligent waste detection system powered by CNN Deep Learning technology.
+</p>
+
+
+</section>
+
+
+
+
+
+<section class="about-container">
+
+
+
+<div class="about-card">
+
+
+<h2>🤖 Our Mission</h2>
+
+
+<p>
+
+Waste management is a major environmental challenge.
+Our AI system helps identify waste types automatically
+and supports better recycling decisions.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="about-card">
+
+
+<h2>🧠 How AI Works</h2>
+
+
+<p>
+
+The system uses a Convolutional Neural Network (CNN)
+to analyze uploaded waste images and classify them
+into different categories.
+
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="about-card">
+
+
+<h2>♻ Waste Categories</h2>
+
+
+<div class="category-list">
+
+<span>📄 Paper</span>
+
+<span>🧴 Plastic</span>
+
+<span>🍌 Organic</span>
+
+<span>🥫 Metal</span>
+
+<span>🪟 Glass</span>
+
+<span>📦 Cardboard</span>
+
+</div>
+
+
+</div>
+
+
+
+
+</section>
+
+
+
+
+
+
+<section class="tech-section">
+
+<h1>⚡ Technology Stack</h1>
+
+
+<div class="tech-container">
+
+
+<div class="tech-card" onclick="toggleTech(this)">
+
+<h2>🐍 Python</h2>
+
+<div class="tech-info">
+
+Python is the main programming language used for:
+<br><br>
+
+• Data processing  
+<br>
+• Model training  
+<br>
+• AI logic  
+<br>
+• Backend development
+
+</div>
+
+</div>
+
+
+
+<div class="tech-card" onclick="toggleTech(this)">
+
+<h2>🧠 TensorFlow CNN</h2>
+
+<div class="tech-info">
+
+TensorFlow CNN is used for:
+
+<br><br>
+
+• Deep learning model creation
+<br>
+• Image classification
+<br>
+• Waste category prediction
+<br>
+• Training neural networks
+
+</div>
+
+</div>
+
+
+
+<div class="tech-card" onclick="toggleTech(this)">
+
+<h2>🌐 Flask</h2>
+
+<div class="tech-info">
+
+Flask provides:
+
+<br><br>
+
+• Web application backend
+<br>
+• API connection
+<br>
+• Model deployment
+<br>
+• Prediction handling
+
+</div>
+
+</div>
+
+
+
+<div class="tech-card" onclick="toggleTech(this)">
+
+<h2>📷 OpenCV</h2>
+
+<div class="tech-info">
+
+OpenCV is used for:
+
+<br><br>
+
+• Camera integration
+<br>
+• Image processing
+<br>
+• Object detection
+<br>
+• Real-time scanning
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<p>Click a technology to learn more 🚀</p>
+
+
+</section>
+
+<script>
+
+
+function showInfo(type){
+
+
+let info = document.getElementById("infoBox");
+
+
+
+let data = {
+
+
+python:
+
+`
+<h2>🐍 Python</h2>
+
+<p>
+Python is the core programming language used in this project.
+It is used for data handling, image processing,
+model training and connecting AI components.
+</p>
+`,
+
+
+
+tensorflow:
+
+`
+<h2>🧠 TensorFlow CNN</h2>
+
+<p>
+TensorFlow helps us create and train the CNN deep learning model.
+CNN analyzes waste images and learns patterns to classify
+different waste categories.
+</p>
+`,
+
+
+
+flask:
+
+`
+<h2>🌐 Flask</h2>
+
+<p>
+Flask is used to create the web application backend.
+It connects our trained AI model with the user interface
+and handles image prediction requests.
+</p>
+`,
+
+
+
+opencv:
+
+`
+<h2>📷 OpenCV</h2>
+
+<p>
+OpenCV is used for computer vision tasks.
+It helps capture, process and prepare images
+before sending them to the AI model.
+</p>`
+
+};
+
+
+
+info.innerHTML=data[type];
+
+
+}
+
+
+</script>
+
+<script>
+
+function toggleTech(card){
+
+    document.querySelectorAll(".tech-card")
+    .forEach(item=>{
+        if(item!==card){
+            item.classList.remove("active");
+        }
+    });
+
+
+    card.classList.toggle("active");
+
+}
+
+</script>
+
+
+</body>
+
+</html>

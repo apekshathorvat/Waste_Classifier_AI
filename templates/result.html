@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>AI Result</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+
+
+<nav>
+
+<h2>♻ Waste AI</h2>
+
+<div>
+
+<a href="/">Home</a>
+<a href="/upload">Predict</a>
+<a href="/camera">Camera</a>
+
+</div>
+
+</nav>
+
+
+
+<div class="result-card">
+
+
+<h1>
+🤖 AI Detection Result
+</h1>
+
+
+
+<img 
+src="/static/uploads/{{image}}"
+class="result-image">
+
+
+
+<h2 class="prediction">
+
+{{prediction}}
+
+</h2>
+
+
+
+<div class="info-box">
+
+
+<h3>
+♻ Recycling Suggestion
+</h3>
+
+
+<p id="advice">
+
+Loading advice...
+
+</p>
+
+
+</div>
+
+
+
+<a href="/upload" class="btn">
+
+🔄 Analyze Another
+
+</a>
+
+
+
+</div>
+
+
+
+<script>
+
+
+let waste="{{prediction}}".toLowerCase();
+
+
+let advice=document.getElementById("advice");
+
+
+if(waste.includes("plastic")){
+
+advice.innerHTML=
+"Plastic can be recycled. Avoid single-use plastic and reuse containers.";
+
+}
+
+
+else if(waste.includes("paper")){
+
+advice.innerHTML=
+"Paper waste can be recycled into new paper products.";
+
+}
+
+
+else if(waste.includes("glass")){
+
+advice.innerHTML=
+"Glass is 100% recyclable. Separate it from other waste.";
+
+}
+
+
+else if(waste.includes("metal")){
+
+advice.innerHTML=
+"Metal waste can be reused and recycled efficiently.";
+
+}
+
+
+else if(waste.includes("cardboard")){
+
+advice.innerHTML=
+"Cardboard should be flattened and sent for recycling.";
+
+}
+
+
+else{
+
+advice.innerHTML=
+"Dispose responsibly and follow local waste management rules.";
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>
